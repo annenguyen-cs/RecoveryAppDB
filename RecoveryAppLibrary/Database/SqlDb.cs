@@ -31,8 +31,6 @@ namespace RecoveryAppLibrary.Database
                 //commandType - we are saying it is a stored procedure call not a regular text sql call - such as Select statement etc 
                 var rows = await connection.QueryAsync<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
 
-                //A list of type T - Strongly type list of the model
-
                 return rows.ToList();
             }
 
