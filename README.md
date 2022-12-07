@@ -9,7 +9,6 @@ SQL
 C#
 Currently in the works
 MVC .Net Core
-(back to top)
 
 <h3>Contributing</h3>
 <br>
@@ -23,12 +22,9 @@ Create your Feature Branch (git checkout -b feature/AmazingFeature)
 Commit your Changes (git commit -m 'Add some AmazingFeature')
 Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
-(back to top)
 
 <h3>License</h3>
 Distributed under the MIT License. See LICENSE.txt for more information.
-
-(back to top)
 
 <h3>Contact</h3>
 <br>
@@ -38,5 +34,4 @@ Anne Nguyen - annenguyen.cs@gmail.com
 <br>
 https://github.com/annenguyen-cs/RecoveryAppDB.git
 
-(back to top)
 
