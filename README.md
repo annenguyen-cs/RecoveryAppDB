@@ -5,10 +5,10 @@
 Recovery House Management Application
 
 <h3>Built With</h3>
-SQL
-C#
-Currently in the works
-MVC .Net Core
+SQL <br>
+C# <br>
+MVC <br>
+.Net Core 
 
 <h3>Contributing</h3>
 <br>
