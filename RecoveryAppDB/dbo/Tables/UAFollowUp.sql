@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[UAFollowUp]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[Summary] NVARCHAR(255),
+	[FollowUpDate] DATETIME2 NOT NULL,
+	[UAId] INT NOT NULL, 
+    CONSTRAINT [FK_UAFollowUp_UAResult] FOREIGN KEY ([UAId]) REFERENCES [UAResult]([Id])
+
+)

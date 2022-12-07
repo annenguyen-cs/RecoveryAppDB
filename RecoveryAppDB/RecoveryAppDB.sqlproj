@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RecoveryAppDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{6b9e0aa0-acda-40e1-b9ab-8be6308d6426}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RecoveryAppDB</RootNamespace>
+    <AssemblyName>RecoveryAppDB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="Scripts" />
+    <Folder Include="dbo\Stored Procedures\Organization" />
+    <Folder Include="dbo\Stored Procedures\Manager" />
+    <Folder Include="dbo\Stored Procedures\Tenant" />
+    <Folder Include="dbo\Stored Procedures\TenantDetails" />
+    <Folder Include="dbo\Stored Procedures\EmergencyContact" />
+    <Folder Include="dbo\Stored Procedures\FinesHistory" />
+    <Folder Include="dbo\Stored Procedures\IncidentReport" />
+    <Folder Include="dbo\Stored Procedures\IncidentFollowUp" />
+    <Folder Include="dbo\Stored Procedures\PreferredHospital" />
+    <Folder Include="dbo\Stored Procedures\RentAdjustment" />
+    <Folder Include="dbo\Stored Procedures\UAResult" />
+    <Folder Include="dbo\Stored Procedures\UAFollowUp" />
+    <Folder Include="dbo\Stored Procedures\PaymentHistory" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Tenant.sql" />
+    <Build Include="dbo\Tables\Manager.sql" />
+    <Build Include="dbo\Tables\Organization.sql" />
+    <Build Include="dbo\Tables\EmergencyContact.sql" />
+    <Build Include="dbo\Tables\PreferredHospital.sql" />
+    <Build Include="dbo\Tables\RentAdjustment.sql" />
+    <Build Include="dbo\Tables\PaymentHistory.sql" />
+    <Build Include="dbo\Tables\FinesHistory.sql" />
+    <Build Include="dbo\Tables\TenantDetails.sql" />
+    <Build Include="dbo\Tables\UAResult.sql" />
+    <Build Include="dbo\Tables\UAFollowUp.sql" />
+    <Build Include="dbo\Tables\IncidentReport.sql" />
+    <Build Include="dbo\Tables\IncidentFollowUp.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\sp_OrganizationAll.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\sp_OrganziationById.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\sp_OrganizationUpdateTitle.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\sp_OrganizationInsert.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\sp_OrganizationDelete.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantAll.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantAllByOrg.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantByManager.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantById.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantDelete.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantInsert.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\Manager\sp_ManagerAll.sql" />
+    <Build Include="dbo\Stored Procedures\Manager\sp_ManagerById.sql" />
+    <Build Include="dbo\Stored Procedures\Manager\sp_ManagerInsert.sql" />
+    <Build Include="dbo\Stored Procedures\Manager\sp_ManagerUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\Manager\sp_ManagerDelete.sql" />
+    <Build Include="dbo\Stored Procedures\TenantDetails\sp_TenantDetailsByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\TenantDetails\sp_TenantDetailsUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantTempDelete.sql" />
+    <Build Include="dbo\Stored Procedures\Tenant\sp_TenantReactivate.sql" />
+    <Build Include="dbo\Stored Procedures\Manager\sp_ManagerTempDelete.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\sp_OrganiztionTempDelete.sql" />
+    <Build Include="dbo\Stored Procedures\Manager\sp_ManagerReactivate.sql" />
+    <Build Include="dbo\Stored Procedures\Organization\sp_OrganizationReactivate.sql" />
+    <Build Include="dbo\Stored Procedures\TenantDetails\sp_TenantDetailsInsert.sql" />
+    <Build Include="dbo\Stored Procedures\EmergencyContact\sp_EmergencyContactByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\EmergencyContact\sp_EmergencyContactUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\EmergencyContact\sp_EmergencyContactInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PreferredHospital\sp_PreferredHospitalByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentReport\sp_IncidentReportByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentReport\sp_IncidentReportAll.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentReport\sp_IncidentReportUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentReport\sp_IncidentReportInsert.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentFollowUp\sp_IncidentFollowUpInsert.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentFollowUp\sp_IncidentFollowUpUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentFollowUp\sp_IncidentFollowUpByReportId.sql" />
+    <Build Include="dbo\Stored Procedures\IncidentFollowUp\sp_IncidentFollowUpById.sql" />
+    <Build Include="dbo\Stored Procedures\UAResult\sp_UAResultByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\UAResult\sp_UAResultByDate.sql" />
+    <Build Include="dbo\Stored Procedures\UAResult\sp_UAResultById.sql" />
+    <Build Include="dbo\Stored Procedures\UAResult\sp_UAResultUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UAFollowUp\sp_UAFollowUpByResultId.sql" />
+    <Build Include="dbo\Stored Procedures\UAFollowUp\sp_UAFollowUpUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\UAFollowUp\sp_UAFollowUpInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PreferredHospital\sp_PreferredHospitalUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PreferredHospital\sp_PreferredHospitalInsert.sql" />
+    <Build Include="dbo\Stored Procedures\FinesHistory\sp_FinesHistoryInsert.sql" />
+    <Build Include="dbo\Stored Procedures\FinesHistory\sp_FinesHistoryUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\FinesHistory\sp_FinesHistoryAll.sql" />
+    <Build Include="dbo\Stored Procedures\FinesHistory\sp_FinesHistoryByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\FinesHistory\sp_FinesHistoryById.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentHistory\sp_PaymentHistoryUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentHistory\sp_PaymentHistoryInsert.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentHistory\sp_PaymentHistoryAll.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentHistory\sp_PaymentHistoryByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentHistory\sp_PaymentHistoryById.sql" />
+    <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentInsert.sql" />
+    <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentByTenantId.sql" />
+    <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentById.sql" />
+    <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecoveryAppDB.publish.xml" />
+  </ItemGroup>
+</Project>

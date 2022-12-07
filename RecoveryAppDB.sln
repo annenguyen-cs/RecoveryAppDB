@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RecoveryAppDB", "RecoveryAppDB\RecoveryAppDB.sqlproj", "{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoveryAppLibrary", "RecoveryAppLibrary\RecoveryAppLibrary.csproj", "{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBE8E03D-C44E-4F83-AB1D-8C5F6FF5410F}
+	EndGlobalSection
+EndGlobal
