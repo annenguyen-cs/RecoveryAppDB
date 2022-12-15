@@ -150,6 +150,7 @@
     <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentByTenantId.sql" />
     <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentById.sql" />
     <Build Include="dbo\Stored Procedures\RentAdjustment\sp_RentAdjustmentAll.sql" />
+    <Build Include="dbo\Stored Procedures\UAResult\sp_UAResultInsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="RecoveryAppDB.publish.xml" />
