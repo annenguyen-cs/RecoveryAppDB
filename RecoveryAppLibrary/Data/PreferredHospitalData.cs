@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("ZipCode", zipCode);
             p.Add("Phone", phone);
             p.Add("TenantId", tenantId);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("sp_PreferredHospitalInsert", p, _connectionString.SqlConnectionName);
 

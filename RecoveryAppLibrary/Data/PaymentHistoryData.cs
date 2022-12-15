@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -35,7 +36,7 @@ namespace RecoveryAppLibrary.Data
 
         public async Task<PaymentHistoryModel> GetPaymentHistoryByTenantId(int tenantId)
         {
-            var tenantPaymentHistory = await _dataAccess.LoadData<PaymentHistoryModel, dynamic>("sp_PaymentHistoryByTenantId", new { TenantId = tenantId }, _connectionString.SqlConnectionName);
+            var tenantPaymentHistory = await _dataAccess.LoadData<PaymentHistoryModel, dynamic>("sp_PaymentHistoryByTenantId", new { Id = tenantId }, _connectionString.SqlConnectionName);
 
             return tenantPaymentHistory.FirstOrDefault();
         }
@@ -47,6 +48,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("TransactionDate", transactionDate);
             p.Add("PaymentType", paymentType);
             p.Add("TenantId", tenantId);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("sp_PaymentHistoryInsert", p, _connectionString.SqlConnectionName);
 

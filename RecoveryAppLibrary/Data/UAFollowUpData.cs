@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("Summary", summary);
             p.Add("FollowUpDate", followUpDate);
             p.Add("UAId", uaId);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("sp_UAFollowUpInsert", p, _connectionString.SqlConnectionName);
 
@@ -42,7 +44,7 @@ namespace RecoveryAppLibrary.Data
 
         public Task<int> UpdateUAFollowUp(int uaId, string summary, DateTime followUpDate)
         {
-            return _dataAccess.SaveData("sp_UAFollowUpInsert", new { UAId = uaId, Summary = summary, FollowUpDate = followUpDate }, _connectionString.SqlConnectionName);
+            return _dataAccess.SaveData("sp_UAFollowUpUpdate", new { UAId = uaId, Summary = summary, FollowUpDate = followUpDate }, _connectionString.SqlConnectionName);
         }
 
 

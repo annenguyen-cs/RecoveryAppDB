@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +27,7 @@ namespace RecoveryAppLibrary.Data
 
         public Task<List<IncidentReportModel>> GetIncidentReportByTenantId(int tenantId)
         {
-            return _dataAccess.LoadData<IncidentReportModel, dynamic>("sp_IncidentReportAll", new { TenantId = tenantId }, _connectionString.SqlConnectionName);
+            return _dataAccess.LoadData<IncidentReportModel, dynamic>("sp_IncidentReportbyTenantId", new { Id = tenantId }, _connectionString.SqlConnectionName);
         }
 
         public async Task<int> CreateIncidentReport(int tenantId, string summary, DateTime incidentDate)
@@ -35,6 +36,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("TenantId", tenantId);
             p.Add("Summary", summary);
             p.Add("IncidentDate", incidentDate);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("sp_IncidentReportInsert", p, _connectionString.SqlConnectionName);
 
@@ -45,7 +47,7 @@ namespace RecoveryAppLibrary.Data
         public Task<int> UpdateIncidentReport(int tenantId, string summary, DateTime incidentDate)
         {
 
-            return _dataAccess.SaveData("sp_IncidentReportInsert", new { TenantId = tenantId, Summary = summary, IncidentDate = incidentDate }, _connectionString.SqlConnectionName);
+            return _dataAccess.SaveData("sp_IncidentReportUpdate", new { TenantId = tenantId, Summary = summary, IncidentDate = incidentDate }, _connectionString.SqlConnectionName);
 
         }
 

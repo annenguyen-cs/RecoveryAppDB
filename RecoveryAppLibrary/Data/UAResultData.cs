@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,21 +23,21 @@ namespace RecoveryAppLibrary.Data
 
         public async Task<UAResultModel> GetUAResultById(int id)
         {
-            var result = await _dataAccess.LoadData<UAResultModel, dynamic>("sp_UAResult", new { Id = id }, _connectionString.SqlConnectionName);
+            var result = await _dataAccess.LoadData<UAResultModel, dynamic>("sp_UAResultById", new { Id = id }, _connectionString.SqlConnectionName);
 
             return result.FirstOrDefault();
         }
 
         public async Task<UAResultModel> GetUAResultByTenantId(int tenantId)
         {
-            var result = await _dataAccess.LoadData<UAResultModel, dynamic>("sp_UAResult", new { TenantId = tenantId }, _connectionString.SqlConnectionName);
+            var result = await _dataAccess.LoadData<UAResultModel, dynamic>("sp_UAResultByTenantId", new { Id = tenantId }, _connectionString.SqlConnectionName);
 
             return result.FirstOrDefault();
         }
 
         public async Task<List<UAResultModel>> GetUAResultByDate(DateTime testDate)
         {
-            return await _dataAccess.LoadData<UAResultModel, dynamic>("sp_UAResultByDate", new { TestDate = testDate }, _connectionString.SqlConnectionName);
+            return await _dataAccess.LoadData<UAResultModel, dynamic>("sp_UAResultByDate", new { Date = testDate }, _connectionString.SqlConnectionName);
 
         }
 
@@ -54,6 +55,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("TenantId", tenantId);
             p.Add("Result", result);
             p.Add("TestDate", testDate);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("sp_UAResultInsert", p, _connectionString.SqlConnectionName);
 

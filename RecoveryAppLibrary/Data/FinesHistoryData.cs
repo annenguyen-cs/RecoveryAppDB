@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace RecoveryAppLibrary.Data
 
         public async Task<FinesHistoryModel> GetFinesHistoryByTenantId(int tenantId)
         {
-            var fineByTenant = await _accessData.LoadData<FinesHistoryModel, dynamic>("sp_FinesHistoryByTenantId", new { TenantId = tenantId }, _connectionData.SqlConnectionName);
+            var fineByTenant = await _accessData.LoadData<FinesHistoryModel, dynamic>("sp_FinesHistoryByTenantId", new { Id = tenantId }, _connectionData.SqlConnectionName);
 
             return fineByTenant.FirstOrDefault();
         }
@@ -46,6 +47,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("FromBalance", fromBalance);
             p.Add("Amount", amount);
             p.Add("TranscationDate", transactionDate);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _accessData.SaveData("sp_FinesHistoryInsert", p, _connectionData.SqlConnectionName);
 

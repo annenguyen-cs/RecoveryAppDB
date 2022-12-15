@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace RecoveryAppLibrary.Data
 
         public async Task<TenantDetailsModel> GetTenantDetailByTenantId(int tenantId)
         {
-            var tenantDetail = await _dataAccess.LoadData<TenantDetailsModel, dynamic>("sp_TenantDetailsByTenantId", new { TenantId = tenantId }, _connectionString.SqlConnectionName);
+            var tenantDetail = await _dataAccess.LoadData<TenantDetailsModel, dynamic>("sp_TenantDetailsByTenantId", new { Id = tenantId }, _connectionString.SqlConnectionName);
 
             return tenantDetail.FirstOrDefault();
         }
@@ -35,6 +36,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("RentalStatus", rentalStatus);
             p.Add("RentAmount", rentAmount);
             p.Add("FinesBalance", finesBalance);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("dbo.sp_TenantDetailsInsert", p, _connectionString.SqlConnectionName);
 

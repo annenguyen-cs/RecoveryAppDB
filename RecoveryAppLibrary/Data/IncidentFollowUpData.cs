@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("IncidentId", incidentId);
             p.Add("FollowUpSummary", followUpSummary);
             p.Add("FollowUpDate", followUpDate);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("sp_IncidentFollowUpInsert", p, _connectionString.SqlConnectionName);
 

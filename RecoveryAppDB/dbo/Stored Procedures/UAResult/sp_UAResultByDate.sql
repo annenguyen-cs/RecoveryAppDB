@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[sp_UAResultByDate]
-	@date datetime2(7)
+	@Date datetime2(7)
 AS
 BEGIN 
 
@@ -7,7 +7,7 @@ BEGIN
 
 	SELECT [Id], [Result], [TestDate], [TenantId] 
 	FROM UAResult
-	WHERE TestDate = @date
+	WHERE TestDate = @Date
 	ORDER BY TenantId, TestDate DESC;
 
 END

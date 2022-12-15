@@ -1,6 +1,22 @@
 ﻿CREATE PROCEDURE [dbo].[sp_PaymentHistoryUpdate]
-	@param1 int = 0,
-	@param2 int
+	@AmountPaid decimal(18,0),
+	@TransactionDate datetime2(7),
+	@PaymentType nvarchar(50),
+	@TenantId int,
+	@Id int output
+
 AS
-	SELECT @param1, @param2
-RETURN 0
+
+BEGIN
+
+	SET NOCOUNT ON;
+	
+	UPDATE dbo.[PaymentHistory]
+	SET AmountPaid = @AmountPaid,
+		TransactionDate = @TransactionDate,
+		PaymentType = @PaymentType,
+		TenantId = @TenantId
+	WHERE Id = @Id;
+
+END
+

@@ -3,6 +3,7 @@ using RecoveryAppLibrary.Database;
 using RecoveryAppLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace RecoveryAppLibrary.Data
 
         public async Task<EmergencyContactModel> GetEmergencyContactByTenantId(int tenantId)
         {
-            var eContact = await _dataAccess.LoadData<EmergencyContactModel, dynamic>("sp_EmergencyContactByTenantId", new { TenantId = tenantId }, _connectionString.SqlConnectionName);
+            var eContact = await _dataAccess.LoadData<EmergencyContactModel, dynamic>("sp_EmergencyContactByTenantId", new { Id = tenantId }, _connectionString.SqlConnectionName);
 
             return eContact.FirstOrDefault();
         }
@@ -36,6 +37,7 @@ namespace RecoveryAppLibrary.Data
             p.Add("Relationship", relationship);
             p.Add("Phone", phone);
             p.Add("Email", email);
+            p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
 
             await _dataAccess.SaveData("sp_EmergencyContactInsert", p, _connectionString.SqlConnectionName);
