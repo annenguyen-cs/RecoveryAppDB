@@ -7,7 +7,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RecoveryAppDB", "RecoveryAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecoveryAppLibrary", "RecoveryAppLibrary\RecoveryAppLibrary.csproj", "{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCRecoveryApp", "MVCRecoveryApp\MVCRecoveryApp.csproj", "{28072F41-C893-449E-A488-B1EFAD3EE0E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCRecoveryApp", "MVCRecoveryApp\MVCRecoveryApp.csproj", "{28072F41-C893-449E-A488-B1EFAD3EE0E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoveryWebApp_6", "RecoveryWebApp_6\RecoveryWebApp_6.csproj", "{673C6F1D-9F98-4053-A94D-FBA9B103DCD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{28072F41-C893-449E-A488-B1EFAD3EE0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28072F41-C893-449E-A488-B1EFAD3EE0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28072F41-C893-449E-A488-B1EFAD3EE0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{673C6F1D-9F98-4053-A94D-FBA9B103DCD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{673C6F1D-9F98-4053-A94D-FBA9B103DCD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{673C6F1D-9F98-4053-A94D-FBA9B103DCD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{673C6F1D-9F98-4053-A94D-FBA9B103DCD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
