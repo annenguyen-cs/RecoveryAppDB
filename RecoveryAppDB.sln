@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RecoveryAppDB", "RecoveryAppDB\RecoveryAppDB.sqlproj", "{6B9E0AA0-ACDA-40E1-B9AB-8BE6308D6426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoveryAppLibrary", "RecoveryAppLibrary\RecoveryAppLibrary.csproj", "{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecoveryAppLibrary", "RecoveryAppLibrary\RecoveryAppLibrary.csproj", "{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCRecoveryApp", "MVCRecoveryApp\MVCRecoveryApp.csproj", "{28072F41-C893-449E-A488-B1EFAD3EE0E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FA11D38-5547-4E38-8CA6-FB5260DBE8E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28072F41-C893-449E-A488-B1EFAD3EE0E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28072F41-C893-449E-A488-B1EFAD3EE0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28072F41-C893-449E-A488-B1EFAD3EE0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28072F41-C893-449E-A488-B1EFAD3EE0E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
